@@ -23,22 +23,6 @@ public class ResponseHeaderInjector implements HandlerInterceptor {
         response.addHeader("X-Trace-Id", traceId);
         response.addHeader("X-Span-Id", spanId);
     }
-
-    /*private final Tracer tracer;
-
-    public ResponseHeaderInjector(TracerProvider tracerProvider) {
-        this.tracer = tracerProvider.get("com.audition.configuration");
-    }
-
-    @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        Span currentSpan = Span.current();
-        if (currentSpan != null) {
-            SpanContext spanContext = currentSpan.getSpanContext();
-            response.setHeader("trace-id", spanContext.getTraceId());
-            response.setHeader("span-id", spanContext.getSpanId());
-        }
-        return true;
-    }*/
+    
 
 }
